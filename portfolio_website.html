@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairu Wangui - Full Stack Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+        }
+
+        section:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .skill-category p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .project-links {
+            margin-top: 20px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 10px;
+            background: #f5f5f5;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+
+        .project-links a:hover {
+            background: #e9e9e9;
+            border-color: #ccc;
+        }
+
+        .project-links .primary {
+            background: #0066cc;
+            color: white;
+            border-color: #0066cc;
+        }
+
+        .project-links .primary:hover {
+            background: #0052a3;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 40px;
+        }
+
+        .experience-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .experience-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .experience-item li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            padding: 4px 12px;
+            background: #f0f0f0;
+            color: #555;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            border: 1px solid #ddd;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 20px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Kairu Wangui</h1>
+                    <p>Full Stack Engineer</p>
+                    <div class="contact-info">
+                        <span>(+254)704-639-389</span>
+                        <span>•</span>
+                        <a href="mailto:kairu.wangui1@gmail.com">kairu.wangui1@gmail.com</a>
+                        <span>•</span>
+                        <span>Remote Work Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>About</h2>
+                <p>Experienced Full Stack Engineer with 5+ years developing scalable web applications. I specialize in Angular, React, and modern JavaScript frameworks, with additional expertise in Python Flask for full-stack development. I have a proven track record of architecting modular systems, implementing automated workflows, and delivering solutions that drive revenue growth and improve customer satisfaction.</p>
+            </section>
+
+            <section>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend Technologies</h3>
+                        <p>Angular, NgRx, RxJS, React, JavaScript, TypeScript, HTML, CSS3</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend Technologies</h3>
+                        <p>Python, Flask, Node.js, NestJS, RESTful APIs</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <p>MySQL, SQLite, Database Design</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & Tools</h3>
+                        <p>Git, GitHub, Bash Scripting, Automated Workflows</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Featured Projects</h2>
+                
+                <div class="project">
+                    <h3>Automotive Service Management Platform</h3>
+                    <div class="project-meta">Current Project • Full Stack Development</div>
+                    <p>Architecting a comprehensive vehicle tracking system for service centers to manage repair workflows and customer communications. Features multi-tenant architecture with white-labeling capabilities, real-time status updates, and automated customer notifications.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Angular 19</span>
+                        <span class="tech-tag">NestJS</span>
+                        <span class="tech-tag">Prisma</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Image Cropping Tool</h3>
+                    <div class="project-meta">Personal Project • Frontend Development</div>
+                    <p>Built a sophisticated image cropping and manipulation tool with real-time preview, multiple aspect ratios, and export capabilities. Features intuitive controls and responsive design for various screen sizes.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Canvas API</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="primary">View Demo</a>
+                        <a href="#">Source Code</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Artist Self-Management Platform</h3>
+                    <div class="project-meta">Wraptious • Frontend Architecture</div>
+                    <p>Architected a comprehensive platform using Angular and NgRx for state management. Designed workflows for orders, art management, product catalog, and image manipulation. Developed predictive image quality assessment system that reduced customer support tickets.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">NgRx</span>
+                        <span class="tech-tag">Python Flask</span>
+                        <span class="tech-tag">Image Processing</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Freelance Full Stack Engineer</h3>
+                    <div class="experience-meta">Remote • July 2025 - Present</div>
+                    <ul>
+                        <li>Architecting vehicle tracking system for service centers to manage repair workflows and customer communications</li>
+                        <li>Building and maintaining personal projects to explore emerging technologies and refine technical expertise</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Frontend Engineer - Wraptious</h3>
+                    <div class="experience-meta">Stockport, UK • February 2020 - July 2025</div>
+                    <ul>
+                        <li>Architected comprehensive artist self-management platform using Angular and NgRx for state management</li>
+                        <li>Developed predictive image quality assessment system, reducing customer support tickets and improving satisfaction</li>
+                        <li>Built flexible discount engine within Python Flask ecosystem, directly contributing to revenue growth</li>
+                        <li>Created comprehensive shipping management system with dynamic postal code mapping</li>
+                        <li>Enhanced payment reliability through comprehensive test coverage and abandoned cart recovery system</li>
+                        <li>Automated reporting infrastructure using bash scripting to synchronize MySQL-based reports to GitHub</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Frontend Engineer - Tracom Services</h3>
+                    <div class="experience-meta">Nairobi, Kenya • March 2019 - January 2020</div>
+                    <ul>
+                        <li>Developed web-based lifecycle management platform for Ingenico payment terminals</li>
+                        <li>Provided complete visibility into device states from procurement through deployment and maintenance</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Available for remote work opportunities • Fluent in English and Swahili</p>
+        </div>
+    </footer>
+</body>
+</html>
